@@ -1,0 +1,28 @@
+Exit code: 1. Reason: Traceback (most recent call last):
+  File "/app/run.py", line 9, in <module>
+    from Src.API.cb01 import cb01
+  File "/app/Src/API/cb01.py", line 30, in <module>
+    proxy = random.choice(proxy_list)
+  File "/usr/local/lib/python3.10/random.py", line 378, in choice
+    return seq[self._randbelow(len(seq))]
+KeyError: 1
+Container logs:
+
+===== Application Startup at 2025-03-28 12:38:23 =====
+
+Traceback (most recent call last):
+  File "/app/run.py", line 9, in <module>
+    from Src.API.cb01 import cb01
+  File "/app/Src/API/cb01.py", line 30, in <module>
+    proxy = random.choice(proxy_list)
+  File "/usr/local/lib/python3.10/random.py", line 378, in choice
+    return seq[self._randbelow(len(seq))]
+KeyError: 1
+Traceback (most recent call last):
+  File "/app/run.py", line 9, in <module>
+    from Src.API.cb01 import cb01
+  File "/app/Src/API/cb01.py", line 30, in <module>
+    proxy = random.choice(proxy_list)
+  File "/usr/local/lib/python3.10/random.py", line 378, in choice
+    return seq[self._randbelow(len(seq))]
+KeyError: 1p
