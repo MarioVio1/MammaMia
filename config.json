@@ -1,7 +1,7 @@
 {
     "Siti": {
         "StreamingCommunity": {
-            "url": "http://streamingcommunity.education",
+            "url": "https://streamingcommunity.education",
             "SC_ForwardProxy": "0",
             "SC_PROXY": "0",
             "VX_ForwardProxy": "0",
