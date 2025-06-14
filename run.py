@@ -97,6 +97,35 @@ MANIFEST = {
     "logo": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png"
 }
 
+const { animeManager, getStreamsForStremio, getCatalogForStremio } = require('./scrapers/anime/anime_integration');
+
+// Route catalogo anime
+app.get('/catalog/:type/:id/:extra?.json', async (req, res) => {
+  const { type, id, extra } = req.params;
+  
+  if (id.startsWith('anime_')) {
+    const catalogType = id.replace('anime_', '');
+    const extraParams = extra ? JSON.parse(decodeURIComponent(extra)) : {};
+    const metas = await getCatalogForStremio(catalogType, extraParams);
+    res.json({ metas });
+  } else {
+    // Gestisci cataloghi esistenti
+  }
+});
+
+// Route per stream anime
+app.get('/stream/:type/:id.json', async (req, res) => {
+  const { id } = req.params;
+  
+  if (id.includes('anime_')) {
+    const [metaId, season, episode] = id.split(':');
+    const streams = await getStreamsForStremio(metaId, parseInt(season), parseInt(episode));
+    res.json({ streams });
+  } else {
+    // Gestisci stream esistenti
+  }
+});
+
 
 def respond_with(data):
     resp = JSONResponse(data)
